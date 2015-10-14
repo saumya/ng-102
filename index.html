@@ -4,15 +4,21 @@
 	<title>crafts</title>
 </head>
 <body>
+	<header>
+		<a href="#!/" title="home">Home</a>
+		<a href="#!/login" title="login">Login</a>
+	</header><!-- /header -->
 	<div data-ng-app="myCraftsApp">
-		hello {{"world"}}
-		<div data-ng-controller="AppController">
-			<ul>
-				<li data-ng-repeat="item in appinfo">{{ item.name }}</li>
-			</ul>
+		Before {{"AngularJS "+"ngView"}}
+		<div data-ng-view>
+			Dynamially populate Views come here.
 		</div>
+		After {{"AngularJS "+"ngView"}}
 	</div>
+	<!-- AngularJS -->
 	<script type="text/javascript" src="js/lib/angular-1-4-7.js"></script>	
-	<script type="text/javascript" src="js/app/modules/craftsApp.js"></script>
+	<script type="text/javascript" src="js/lib/angular-route.js"></script>	
+	<!-- Application Entry -->
+	<script type="text/javascript" src="js/app/modules/craftsApp.js"></script>	
 </body>
 </html>
