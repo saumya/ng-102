@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
 	<title>crafts</title>
 	<link rel="stylesheet" href="js/lib/bootstrap/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="js/lib/bootstrap/css/bootstrap-theme.css" media="screen" title="no title" charset="utf-8">
@@ -8,10 +13,12 @@
 	<script type="text/javascript" src="js/lib/jquery/jquery-2.1.4.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/lib/bootstrap/js/bootstrap.js" charset="utf-8"></script>
 </head>
-<body>
+<body class="container-fluid">
 	<header>
-		<a href="#!/" title="home">Home</a>
-		<a href="#!/login" title="login">Login</a>
+		<nav class="navbar navbar-default">
+			<a class="btn btn-default" href="#!/" title="home">Home</a>
+			<a class="btn btn-default" href="#!/login" title="login">Login</a>
+		</nav>
 	</header><!-- /header -->
 	<div data-ng-app="myCraftsApp">
 		Before {{"AngularJS "+"ngView"}}
