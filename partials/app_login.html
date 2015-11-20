@@ -1,6 +1,12 @@
 <div>
-	<span>Login</span>
-	<ul>
-		<li data-ng-repeat="item in appinfo">{{ item.name }}</li>
-	</ul>
+	<span>Please login</span>
+	<div class="input-group">
+		<input type="text" class="form-control" placeholder="username" aria-describedby="basic-addon2">
+		<span class="input-group-addon" id="basic-addon2">yourname@something.com</span>
+	</div>
+	<div class="input-group">
+		<input type="text" class="form-control" placeholder="password" aria-describedby="basic-addon2">
+		<span class="input-group-addon" id="basic-addon2">password</span>
+	</div>
+	<a class="btn btn-default" href="#" role="button">Login</a>
 </div>
