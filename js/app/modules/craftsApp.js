@@ -14,18 +14,21 @@
 	});
 	mApp.run(function($rootScope){
 		console.log('Module : Application : run');
-		console.log('$rootScope',$rootScope);
+		console.log('$rootScope : ',$rootScope);
+		$rootScope.appName = "Crafts Application, Version:1.0.0 .";
 	});
 	//	Controllers
-	mApp.controller('TestController',function($scope){
+	mApp.controller('TestController',function($scope,$rootScope){
 		console.log('Module : TestController : ');
 		console.log('$scope : ',$scope);
+		console.log('$rootScope : ',$rootScope);
 		$scope.appinfo =	[	{name:'craft',version:'1.0.0',author:'saumya'},
 												{name:'craft',version:'1.0.0',author:'saumya'}	];
 	});
-	mApp.controller('LoginController',function($scope){
+	mApp.controller('LoginController',function($scope,$rootScope){
 		console.log('Module : LoginController : ');
 		console.log('$scope : ',$scope);
+		console.log('$rootScope : ',$rootScope);
 	});
 	// End Controllers
 })();
