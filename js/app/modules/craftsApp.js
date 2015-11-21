@@ -12,11 +12,20 @@
 			when("/login",{templateUrl:"partials/app_login.html",controller:"LoginController"}).
 			otherwise({redirectTo:"/"});
 	});
+	mApp.run(function($rootScope){
+		console.log('Module : Application : run');
+		console.log('$rootScope',$rootScope);
+	});
 	//	Controllers
 	mApp.controller('TestController',function($scope){
+		console.log('Module : TestController : ');
+		console.log('$scope : ',$scope);
 		$scope.appinfo =	[	{name:'craft',version:'1.0.0',author:'saumya'},
 												{name:'craft',version:'1.0.0',author:'saumya'}	];
 	});
-	mApp.controller('LoginController',function($scope){});
+	mApp.controller('LoginController',function($scope){
+		console.log('Module : LoginController : ');
+		console.log('$scope : ',$scope);
+	});
 	// End Controllers
 })();
