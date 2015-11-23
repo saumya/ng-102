@@ -8,6 +8,7 @@
   craftsService.run(function(){
     console.log('crafts.service : run');
   });
+  // a Factory
   craftsService.factory('CraftsServiceFactory',function(){
     console.log('crafts.service : craftsServiceFactory');
     var factory = {
@@ -17,5 +18,12 @@
       }
     };
     return factory;
+  });
+  // a Service
+  craftsService.service('CraftsService',function(){
+    this.serviceVersion = '1.0.0';
+    this.logInfo = function(){
+      console.log('CraftsService : info : Version',this.serviceVersion);
+    }
   });
 })();

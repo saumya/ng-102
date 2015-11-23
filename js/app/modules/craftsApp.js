@@ -25,12 +25,14 @@
 		$scope.appinfo =	[	{name:'craft',version:'1.0.0',author:'saumya'},
 												{name:'craft',version:'1.0.0',author:'saumya'}	];
 	});
-	mApp.controller('LoginController',function($scope,$rootScope,CraftsServiceFactory){
+	mApp.controller('LoginController',function($scope,$rootScope,CraftsServiceFactory,CraftsService){
 		console.group('Module : LoginController : ');
 		console.log('$scope : ',$scope);
 		console.log('$rootScope : ',$rootScope);
 		console.log('CraftsServiceFactory : ',CraftsServiceFactory);
 		CraftsServiceFactory.showVersion();
+		console.log('CraftsService : ',CraftsService);
+		CraftsService.logInfo();
 		console.groupEnd();
 	});
 	// End Controllers
