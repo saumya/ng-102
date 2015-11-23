@@ -8,14 +8,14 @@
   craftsService.run(function(){
     console.log('crafts.service : run');
   });
-  craftsService.factory('CraftsService',function(){
+  craftsService.factory('CraftsServiceFactory',function(){
     console.log('crafts.service : craftsServiceFactory');
-    var service = {
+    var factory = {
       version:'1.0.0',
       showVersion:function(){
-        console.log('CraftsService Version',this.version);
+        console.log('CraftsServiceFactory Version',this.version);
       }
     };
-    return service;
+    return factory;
   });
 })();
