@@ -18,12 +18,14 @@
 		$rootScope.appName = "Crafts Application, Version:1.0.0 .";
 	});
 	//	Controllers
-	mApp.controller('TestController',function($scope,$rootScope){
-		console.log('Module : TestController : ');
+	mApp.controller('TestController',function($scope,$rootScope,DuckDuckGo){
+		console.group('Module : TestController : ');
 		console.log('$scope : ',$scope);
 		console.log('$rootScope : ',$rootScope);
 		$scope.appinfo =	[	{name:'craft',version:'1.0.0',author:'saumya'},
 												{name:'craft',version:'1.0.0',author:'saumya'}	];
+		DuckDuckGo.search("India");
+		console.groupEnd();
 	});
 	mApp.controller('LoginController',function($scope,$rootScope,CraftsServiceFactory,CraftsService,SearchServiceFactory){
 		console.group('Module : LoginController : ');
