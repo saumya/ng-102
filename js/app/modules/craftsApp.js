@@ -2,7 +2,7 @@
 (function(){
 	'use strict';
 	//	Application Entry Module
-	var mApp = angular.module('myCraftsApp',["ngRoute","ngResource","crafts.test","crafts.one"]);
+	var mApp = angular.module('myCraftsApp',["ngRoute","ngResource","crafts.test","crafts.one","crafts.service"]);
 	//	Configuration for the application
 	mApp.config(function($routeProvider,$locationProvider){
 		$locationProvider.hashPrefix('!');
@@ -25,10 +25,13 @@
 		$scope.appinfo =	[	{name:'craft',version:'1.0.0',author:'saumya'},
 												{name:'craft',version:'1.0.0',author:'saumya'}	];
 	});
-	mApp.controller('LoginController',function($scope,$rootScope){
-		console.log('Module : LoginController : ');
+	mApp.controller('LoginController',function($scope,$rootScope,CraftsService){
+		console.group('Module : LoginController : ');
 		console.log('$scope : ',$scope);
 		console.log('$rootScope : ',$rootScope);
+		console.log('CraftsService : ',CraftsService);
+		CraftsService.showVersion();
+		console.groupEnd();
 	});
 	// End Controllers
 })();
