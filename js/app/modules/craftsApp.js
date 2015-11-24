@@ -2,7 +2,7 @@
 (function(){
 	'use strict';
 	//	Application Entry Module
-	var mApp = angular.module('myCraftsApp',["ngRoute","ngResource","crafts.test","crafts.one","crafts.service","crafts.searchService","crafts.searchServiceModule"]);
+	var mApp = angular.module('myCraftsApp',["ngRoute","ngResource","crafts.test","crafts.one","crafts.service","crafts.searchService","crafts.searchServiceModule","crafts.directiveOneModule"]);
 	//	Configuration for the application
 	mApp.config(function($routeProvider,$locationProvider){
 		$locationProvider.hashPrefix('!');
