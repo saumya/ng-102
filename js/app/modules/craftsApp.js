@@ -2,7 +2,7 @@
 (function(){
 	'use strict';
 	//	Application Entry Module
-	var mApp = angular.module('myCraftsApp',["ngRoute","ngResource","crafts.test","crafts.one","crafts.service","crafts.searchService","crafts.searchServiceModule","crafts.directiveOneModule"]);
+	var mApp = angular.module('myCraftsApp',["ngRoute","ngResource","crafts.test","crafts.one","crafts.service","crafts.searchService","crafts.searchServiceModule","crafts.directiveOneModule","crafts.weatherService"]);
 	//	Configuration for the application
 	mApp.config(function($routeProvider,$locationProvider){
 		$locationProvider.hashPrefix('!');
@@ -53,7 +53,7 @@
 		p.success(function(data,status,headers,config){
 			console.log('Success',data,status,headers,config);
 		});
-		p.error(function(data,status,headers,config,a1){
+		p.error(function(data,status,headers,config){
 			console.log('Error',data,status,headers,config);
 		});
 
@@ -69,7 +69,7 @@
 		*/
 		console.groupEnd();
 	});
-	mApp.controller('LoginController',function($scope,$rootScope,CraftsServiceFactory,CraftsService,SearchServiceFactory){
+	mApp.controller('LoginController',function($scope,$rootScope,CraftsServiceFactory,CraftsService,SearchServiceFactory,Weather){
 		console.group('Module : LoginController : ');
 		console.log('$scope : ',$scope);
 		console.log('$rootScope : ',$rootScope);
@@ -79,6 +79,26 @@
 		CraftsService.logInfo();
 		console.log('SearchServiceFactory : ',SearchServiceFactory);
 		SearchServiceFactory.showVersion();
+		//
+		var city = "Bangalore";
+		var p = Weather.search(city);
+		p.success(function(data,status,headers,config){
+			console.group('Success');
+			console.log('data',data);
+			console.log('status',status);
+			console.log('headers',headers);
+			console.log('config',config);
+			console.log('weather : ',city+' : '+data.weather[0].description);
+			console.groupEnd();
+		});
+		p.error(function(data,status,headers,config){
+			console.group('Error');
+			console.log('data',data);
+			console.log('status',status);
+			console.log('headers',headers);
+			console.log('config',config);
+			console.groupEnd();
+		});
 		console.groupEnd();
 	});
 	// End Controllers
