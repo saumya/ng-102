@@ -2,13 +2,14 @@
 (function(){
 	'use strict';
 	//	Application Entry Module
-	var mApp = angular.module('myCraftsApp',["ngRoute","ngResource","crafts.test","crafts.one","crafts.service","crafts.searchService"]);
+	var mApp = angular.module('myCraftsApp',["ngRoute","ngResource","crafts.test","crafts.one","crafts.service","crafts.searchService","crafts.searchServiceModule"]);
 	//	Configuration for the application
 	mApp.config(function($routeProvider,$locationProvider){
 		$locationProvider.hashPrefix('!');
 		$routeProvider.
 			when("/",{templateUrl: "partials/app_home.html"}).
-			when("/test",{templateUrl:"partials/app_test.html",controller:"TestController"}).
+			//when("/test",{templateUrl:"partials/app_test.html",controller:"TestController"}).
+			when("/test",{templateUrl:"partials/app_test.html",controller:"SearchServiceController"}).
 			when("/login",{templateUrl:"partials/app_login.html",controller:"LoginController"}).
 			otherwise({redirectTo:"/"});
 	});
