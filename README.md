@@ -14,7 +14,6 @@ This project uses the following concepts
  - Service
  - Partials (Sub views or Views)
  - Code comments are there for hinting of things
- - Making pretty URLs with HTML5 History API (This is commented inside the code)
 
 
 
