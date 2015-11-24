@@ -22,4 +22,4 @@ This project uses the following concepts
 
 
 [1]: https://angularjs.org/
-[1]: https://github.com/saumya/ng-101
+[2]: https://github.com/saumya/ng-101
