@@ -24,8 +24,10 @@
 		console.log('$rootScope : ',$rootScope);
 		$scope.appinfo =	[	{name:'craft',version:'1.0.0',author:'saumya'},
 												{name:'craft',version:'1.0.0',author:'saumya'}	];
-		//DuckDuckGo.search("India"); // returns an object of $http
+		//DuckDuckGo.search("India"); // returns an object of type Promise
 		//DuckDuckGo.search("India").success().error();
+		/*
+		// Implementation, Type : 1
 		DuckDuckGo.search("India")
 			.success(function(data,status,headers,config){
 				console.group('Success');
@@ -43,6 +45,27 @@
 				console.log('config',config);
 				console.groupEnd();
 			});
+		*/
+
+		// Implementation, Type : 2
+		var p = DuckDuckGo.search("India");
+		p.success(function(data,status,headers,config){
+			console.log('Success',data,status,headers,config);
+		});
+		p.error(function(data,status,headers,config,a1){
+			console.log('Error',data,status,headers,config);
+		});
+
+		/*
+		// Implementation, Type : 3
+		var p = DuckDuckGo.search("India");
+		//p.then(function(result){},function(error){});
+		p.then(function(result){
+			console.log('Success : ',result);
+		},function(error){
+			console.log('Error',error);
+		});
+		*/
 		console.groupEnd();
 	});
 	mApp.controller('LoginController',function($scope,$rootScope,CraftsServiceFactory,CraftsService,SearchServiceFactory){

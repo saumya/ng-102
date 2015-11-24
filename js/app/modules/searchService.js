@@ -20,10 +20,13 @@
     return factory;
   });
   searchService.factory('DuckDuckGo',function($http){
+    // var promise = $http({}); // the function call $http(), returns a Promise
     //var ddgUrl = "http://api.duckduckgo.com/?q=india&format=json&pretty=1";
     var ddgUrl = "http://api.duckduckgo.com";
     var runRequest = function(searchString){
-      return $http({ url:ddgUrl + '/?q=' + searchString + '&format=json&pretty=1' });
+      var searchUrl = ddgUrl + '/?q=' + searchString + '&format=json&pretty=1';
+      var promise = $http({ method: 'GET', url: searchUrl });
+      return promise;
     };
     var factory = {
       search: function(searchString){
