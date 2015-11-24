@@ -24,7 +24,25 @@
 		console.log('$rootScope : ',$rootScope);
 		$scope.appinfo =	[	{name:'craft',version:'1.0.0',author:'saumya'},
 												{name:'craft',version:'1.0.0',author:'saumya'}	];
-		DuckDuckGo.search("India");
+		//DuckDuckGo.search("India"); // returns an object of $http
+		//DuckDuckGo.search("India").success().error();
+		DuckDuckGo.search("India")
+			.success(function(data,status,headers,config){
+				console.group('Success');
+				console.log('data',data);
+				console.log('status',status);
+				console.log('headers',headers);
+				console.log('config',config);
+				console.groupEnd();
+			})
+			.error(function(data,status,headers,config){
+				console.group('Error');
+				console.log('data',data);
+				console.log('status',status);
+				console.log('headers',headers);
+				console.log('config',config);
+				console.groupEnd();
+			});
 		console.groupEnd();
 	});
 	mApp.controller('LoginController',function($scope,$rootScope,CraftsServiceFactory,CraftsService,SearchServiceFactory){
