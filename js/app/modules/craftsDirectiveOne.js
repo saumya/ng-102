@@ -18,6 +18,7 @@
     };
     return directiveObj;
   });
+  // craftsTwoDirective = crafts-two-directive in HTML as <crafts-two-directive>
   directiveModule.directive('craftsTwoDirective',function(){
     var directiveObj = {
       restrict:'EA',
